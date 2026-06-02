@@ -1,0 +1,81 @@
+#
+# Copyright (C) 2025 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# Inherit some common Lineage stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
+# Inherit from tanzanite device
+$(call inherit-product, device/xiaomi/tanzanite/device.mk)
+
+PRODUCT_DEVICE := tanzanite
+PRODUCT_NAME := lineage_tanzanite
+PRODUCT_BRAND := Redmi
+PRODUCT_MODEL := 24117RN76O
+PRODUCT_MANUFACTURER := xiaomi
+
+PRODUCT_SYSTEM_NAME := lineage_tanzanite
+PRODUCT_SYSTEM_DEVICE := tanzanite
+
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BuildFingerprint=Redmi/tanzanite_n_global/tanzanite:15/AP3A.240905.015.A2/OS2.0.213.0.VOGEUXM:user/release-keys \
+    DeviceName=$(PRODUCT_SYSTEM_DEVICE) \
+    DeviceProduct=$(PRODUCT_SYSTEM_NAME)
+
+# =========================================================
+# Device Identity
+# =========================================================
+AXION_MAINTAINER := ZeyaD
+AXION_PROCESSOR := Helio_G99_Ultra
+
+# =========================================================
+# Camera Configuration
+# =========================================================
+AXION_CAMERA_REAR_INFO := 108,2,2
+AXION_CAMERA_FRONT_INFO := 20
+
+# =========================================================
+# Build Features
+# =========================================================
+TARGET_INCLUDE_AXFX := true
+TARGET_ENABLE_BLUR := true
+PERF_ANIM_OVERRIDE := true
+
+# =========================================================
+# Product Property Overrides
+# =========================================================
+
+# GPU Enhancement Driver (GED)
+PRODUCT_PROPERTY_OVERRIDES += \
+    sys.vendor.ged.gpu_boost=1
+
+# Performance Hub
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.power.fixed_performance_scale=0 \
+    ro.vendor.mtk_perf_fast_response=1 \
+    ro.vendor.mtk_perf_simple_start_win=1
+
+# Memory Management
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.low_ram=false \
+    ro.lmk.kill_heaviest_task=true
+
+# Graphics & Rendering
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.disable_backpressure=1 \
+    debug.sf.latch_unsignaled=1
+
+# Scrolling Optimizations (Add to lineage_tanzanite.mk)
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.perf.scroll_opt=true \
+    persist.sys.perf.scroll_opt.heavy_app=2
+
+TARGET_DISABLES_LIBPERF := true
