@@ -19,15 +19,15 @@
     {
       "Name": "battery",
       "Type": "BATTERY",
-      "HotThreshold": ["NaN", "NaN", "NaN", 50.0, 55.0, 59.0, 60.0],
-      "VrThreshold": "50.0",
+      "HotThreshold": [38.0, 40.0, 42.0, 44.0, 48.0, 52.0, 58.0],
+      "VrThreshold": "40.0",
       "Multiplier": 0.001
     },
     {
       "Name": "ap_ntc",
       "Type": "SKIN",
-      "HotThreshold": ["NaN", "NaN", "NaN", 50.0, 70.0, 80.0, 90.0],
-      "VrThreshold": "50.0",
+      "HotThreshold": [38.0, 40.0, 42.0, 44.0, 48.0, 52.0, 58.0],
+      "VrThreshold": "40.0",
       "Multiplier": 0.001
     },
     {
