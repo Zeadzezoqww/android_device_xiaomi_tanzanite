@@ -219,3 +219,8 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 
 # Inherit the proprietary files
 include vendor/xiaomi/tanzanite/BoardConfigVendor.mk
+
+# AxionOS
+TARGET_DISABLE_EPPE := true
+
+
