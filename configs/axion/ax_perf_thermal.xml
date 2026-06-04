@@ -1,40 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
 <perf-config>
     <atmc>
         <cpu_levels>
-            <level id="1" little="500,2000" big="725,2200"/>
-            <level id="2" little="500,1942" big="725,2142"/>
-            <level id="3" little="500,1883" big="725,2084"/>
-            <level id="4" little="500,1825" big="725,2026"/>
-            <level id="5" little="500,1766" big="725,1969"/>
-            <level id="6" little="500,1708" big="725,1911"/>
-            <level id="7" little="500,1649" big="725,1853"/>
-            <level id="8" little="500,1591" big="725,1796"/>
-            <level id="9" little="500,1532" big="725,1738"/>
-            <level id="10" little="500,1474" big="725,1680"/>
-            <level id="11" little="500,1415" big="725,1623"/>
-            <level id="12" little="500,1357" big="725,1565"/>
-            <level id="13" little="500,1298" big="725,1507"/>
-            <level id="14" little="500,1240" big="725,1450"/>
-            <level id="15" little="500,1182" big="725,1392"/>
-            <level id="16" little="500,1123" big="725,1334"/>
-            <level id="17" little="500,1065" big="725,1276"/>
-            <level id="18" little="500,1006" big="725,1219"/>
-            <level id="19" little="500,948" big="725,1161"/>
-            <level id="20" little="500,889" big="725,1103"/>
-            <level id="21" little="500,831" big="725,1046"/>
-            <level id="22" little="500,772" big="725,988"/>
-            <level id="23" little="500,714" big="725,930"/>
-            <level id="24" little="500,655" big="725,873"/>
-            <level id="25" little="500,597" big="725,815"/>
-            <level id="26" little="500,538" big="725,757"/>
-            <level id="27" little="500,500" big="725,725"/>
+            <!-- MT6789: Little (0-5), Big (6-7) -->
+            <level status="0" little="2000000" big="2200000" />
+            <level status="1" little="1800000" big="1800000" />
+            <level status="2" little="1400000" big="1400000" />
         </cpu_levels>
+
         <gpu_levels>
-            <level id="1" min="10" max="0"/>
-            <level id="2" min="10" max="1"/>
-            <level id="3" min="10" max="2"/>
-            <level id="4" min="10" max="3"/>
+            <!-- OPP Indices -->
+            <level status="0" index="-1" />
+            <level status="1" index="10" />
+            <level status="2" index="20" />
+        </gpu_levels>
+
+        <boost_scenarios>
+            <!-- Map thermal levels to boost actions -->
+            <scenario name="normal" status="0" boost="true" />
+            <scenario name="moderate" status="1" boost="true" />
+            <scenario name="severe" status="2" boost="false" />
+        </boost_scenarios>
+    </atmc>
+</perf-config>            <level id="4" min="10" max="3"/>
             <level id="5" min="10" max="4"/>
             <level id="6" min="10" max="5"/>
             <level id="7" min="10" max="6"/>
