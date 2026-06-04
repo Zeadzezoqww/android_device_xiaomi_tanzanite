@@ -4,3 +4,13 @@ allow init proc_dirty:file rw_file_perms;
 allow init hal_graphics_composer_default:fd use;
 
 allow init_insmod_sh self:key { write search setattr };
+allow init axion_proc_drop_caches:file rw_file_perms;
+allow init axion_proc_sched:file rw_file_perms;
+allow init axion_proc_dirty:file rw_file_perms;
+allow init axion_proc_printk:file rw_file_perms;
+allow init proc_sched_migration_cost_ns:file rw_file_perms;
+allow init proc_dirty:file rw_file_perms;
+allow init proc_sched:file rw_file_perms;
+
+# Bypass Charging
+allow init sysfs_power_supply:file rw_file_perms;
