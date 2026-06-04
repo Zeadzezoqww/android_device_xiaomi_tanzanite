@@ -49,33 +49,3 @@ TARGET_INCLUDE_AXFX := true
 TARGET_ENABLE_BLUR := true
 PERF_ANIM_OVERRIDE := true
 
-# =========================================================
-# Product Property Overrides
-# =========================================================
-
-# GPU Enhancement Driver (GED)
-PRODUCT_PROPERTY_OVERRIDES += \
-    sys.vendor.ged.gpu_boost=1
-
-# Performance Hub
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.power.fixed_performance_scale=0 \
-    ro.vendor.mtk_perf_fast_response=1 \
-    ro.vendor.mtk_perf_simple_start_win=1
-
-# Memory Management
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.low_ram=false \
-    ro.lmk.kill_heaviest_task=true
-
-# Graphics & Rendering
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.disable_backpressure=1 \
-    debug.sf.latch_unsignaled=1
-
-# Scrolling Optimizations (Add to lineage_tanzanite.mk)
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.perf.scroll_opt=true \
-    persist.sys.perf.scroll_opt.heavy_app=2
-
-TARGET_DISABLES_LIBPERF := true
