@@ -394,3 +394,21 @@ PRODUCT_COPY_FILES += \
     device/<vendor>/tanzanite/configs/axion/ax_perf_boosts.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ax_perf_boosts.xml \
     device/<vendor>/tanzanite/configs/axion/ax_perf_thermal.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ax_perf_thermal.xml \
     device/<vendor>/tanzanite/configs/axion/ax_perf_threads.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ax_perf_threads.xml
+
+
+# AxionOS Device Properties
+AXION_CAMERA_REAR_INFO := 108,8,2,2
+AXION_CAMERA_FRONT_INFO := 16
+AXION_MAINTAINER := ZeyaD
+AXION_PROCESSOR := Helio_G99
+
+# AxionOS Features
+TARGET_ENABLE_BLUR := true
+TARGET_INCLUDE_AXFX := true
+
+# Charging
+BYPASS_CHARGE_SUPPORTED := true
+BYPASS_CHARGE_TOGGLE_PATH := /sys/class/power_supply/battery/input_suspend
+
+# Refresh Rate
+TARGET_SUPPORTED_REFRESH_RATES := 60,90,120
