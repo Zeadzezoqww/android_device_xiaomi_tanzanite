@@ -32,3 +32,8 @@ type sysfs_touch_hostprocess, sysfs_type, fs_type;
 type sysfs_tp_virtual_prox, sysfs_type, fs_type;
 type sysfs_touch_suspend, sysfs_type, fs_type;
 type sysfs_pen_connect_strategy_node, sysfs_type, fs_type;
+
+type axion_proc_dirty, fs_type, proc_type;
+type axion_proc_drop_caches, fs_type, proc_type;
+type axion_proc_sched, fs_type, proc_type;
+type axion_proc_printk, fs_type, proc_type;
