@@ -2,3 +2,15 @@ allow system_server hal_sensors_default:binder transfer;
 allow system_server vendor_hal_citsensorservice_xiaomi_default:binder transfer;
 allow system_server vendor_hal_citsensorservice_xiaomi_default:binder call;
 allow system_server hal_graphics_allocator_default_tmpfs:file rw_file_perms;
+
+# AxBurstEngine
+allow system_server proc_gpufreqv2:dir search;
+allow system_server proc_gpufreqv2:file rw_file_perms;
+allow system_server sysfs_dvfsrc_devfreq:dir search;
+allow system_server sysfs_dvfsrc_devfreq:file rw_file_perms;
+allow system_server sysfs_task_turbo:dir search;
+allow system_server sysfs_task_turbo:file rw_file_perms;
+allow system_server vendor_sysfs_thermalconfig:file rw_file_perms;
+allow system_server proc_dirty:file rw_file_perms;
+allow system_server proc_drop_caches:file rw_file_perms;
+allow system_server proc_sched:file rw_file_perms;
