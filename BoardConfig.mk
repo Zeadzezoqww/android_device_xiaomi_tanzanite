@@ -222,8 +222,4 @@ include vendor/xiaomi/tanzanite/BoardConfigVendor.mk
 
 
 
-BOARD_KERNEL_CMDLINE += androidboot.usbconfig=adb
 
-# Disable the Watchdog and AEE/Pureason reboot triggers
-BOARD_KERNEL_CMDLINE += androidboot.watchdog=0
-BOARD_KERNEL_CMDLINE += androidboot.aee_mode=disable

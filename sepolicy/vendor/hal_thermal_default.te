@@ -1,20 +1,15 @@
-# Allow the Pixel thermal service to modify dirty pages and kernel scheduler parameters
-allow hal_thermal_default axion_proc_dirty:file rw_file_perms;
-allow hal_thermal_default axion_proc_printk:file rw_file_perms;
-allow hal_thermal_default axion_proc_sched:file rw_file_perms;
-allow hal_thermal_default proc_sched_migration_cost_ns:file rw_file_perms;
-allow hal_thermal_default proc_dirty:file rw_file_perms;
+# 1. Register as a Thermal HAL server
+hal_server_domain(hal_thermal_default, hal_thermal)
 
-# Allow the Pixel thermal service to read and write to sysfs thermal zones
+# 2. Keep the sysfs access (this is what it actually needs)
 allow hal_thermal_default sysfs_thermal:dir r_dir_perms;
 allow hal_thermal_default sysfs_thermal:file rw_file_perms;
 allow hal_thermal_default sysfs_thermal:lnk_file r_file_perms;
 
-# Allow access to battery and charging control nodes
-allow hal_thermal_default sysfs_batteryinfo:dir r_dir_perms;
-allow hal_thermal_default sysfs_batteryinfo:file rw_file_perms;
-allow hal_thermal_default sysfs_batteryinfo:lnk_file r_file_perms;
-
-# Connect the service to the hardware binder
+# 3. Add necessary binder call for hwservicemanager
 binder_call(hal_thermal_default, hwservicemanager)
-binder_call(hal_thermal_default, servicemanager)
+binder_call(hwservicemanager, hal_thermal_default)
+
+# 4. REMOVE the proc_sched/proc_dirty rules for now 
+# If it needs these, it will trigger an AVC denial in dmesg. 
+# Don't add them until you see the specific "avc: denied" log for them.

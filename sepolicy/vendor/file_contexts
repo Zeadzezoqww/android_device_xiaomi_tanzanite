@@ -30,7 +30,8 @@
 
 # Thermal
 /(vendor|system/vendor)/bin/hw/android\.hardware\.thermal-service\.pixel  u:object_r:hal_thermal_default_exec:s0
-/sys/devices/virtual/thermal/thermal_message/sconfig                                                   u:object_r:vendor_sysfs_thermalconfig:s0
+/vendor/etc/thermal_info_config\.xml                                    u:object_r:vendor_sysfs_thermalconfig:s0
+
 
 # Touchfeatures
 /dev/xiaomi-touch u:object_r:touchfeature_device:s0
