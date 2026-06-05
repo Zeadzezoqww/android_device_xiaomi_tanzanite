@@ -13,3 +13,5 @@ binder_call(hwservicemanager, hal_thermal_default)
 # 4. REMOVE the proc_sched/proc_dirty rules for now 
 # If it needs these, it will trigger an AVC denial in dmesg. 
 # Don't add them until you see the specific "avc: denied" log for them.
+
+allow hal_thermal_default vendor_thermal_config_file:file r_file_perms;

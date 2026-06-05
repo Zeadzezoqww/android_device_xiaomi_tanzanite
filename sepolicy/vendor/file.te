@@ -21,7 +21,11 @@ type mitee_data_file, data_file_type, file_type;
 type proc_mitee_log, fs_type, proc_type;
 
 # Thermal
+# 1. Revert this back to just sysfs_type
 type vendor_sysfs_thermalconfig, sysfs_type, fs_type;
+
+# 2. Create a NEW type for the physical XML file
+type vendor_thermal_config_file, file_type, vendor_file_type;
 
 # Perf
 type proc_vm_dirty, fs_type, proc_type;
