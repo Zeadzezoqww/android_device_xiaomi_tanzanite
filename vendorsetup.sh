@@ -17,7 +17,7 @@ index 3bfdddea37d55..dae25f71af0f9 100644
           * @param onDisplayConfigured a runnable that should be run after GHBM is enabled.
 "
 
-if echo "$UDFPS_PATCH" | patch -f -d "$ANDROID_BUILD_TOP/frameworks/base/" -p1 --dry-run > /dev/null; then
+if echo "$UDFPS_PATCH" | patch -f -d "$(pwd)/frameworks/base/" -p1 --dry-run > /dev/null; then
     echo "Apply patch for udfps"
-    echo "$UDFPS_PATCH" | patch -f -d "$ANDROID_BUILD_TOP/frameworks/base/" -p1
+    echo "$UDFPS_PATCH" | patch -f -d "$(pwd)/frameworks/base/" -p1
 fi

@@ -246,7 +246,7 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal-service.mediatek
+    android.hardware.thermal-service.pixel
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
@@ -390,10 +390,10 @@ $(call inherit-product, vendor/xiaomi/tanzanite/tanzanite-vendor.mk)
 # AxBurstEngine Firmware Configuration
 # =========================================================
 PRODUCT_COPY_FILES += \
-    device/<vendor>/tanzanite/configs/axion/ax_perf_resources.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ax_perf_resources.xml \
-    device/<vendor>/tanzanite/configs/axion/ax_perf_boosts.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ax_perf_boosts.xml \
-    device/<vendor>/tanzanite/configs/axion/ax_perf_thermal.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ax_perf_thermal.xml \
-    device/<vendor>/tanzanite/configs/axion/ax_perf_threads.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ax_perf_threads.xml
+    device/xiaomi/tanzanite/configs/axion/ax_perf_resources.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ax_perf_resources.xml \
+    device/xiaomi/tanzanite/configs/axion/ax_perf_boosts.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ax_perf_boosts.xml \
+    device/xiaomi/tanzanite/configs/axion/ax_perf_thermal.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ax_perf_thermal.xml \
+    device/xiaomi/tanzanite/configs/axion/ax_perf_threads.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ax_perf_threads.xml
 
 
 # AxionOS Device Properties
@@ -406,9 +406,7 @@ AXION_PROCESSOR := Helio_G99
 TARGET_ENABLE_BLUR := true
 TARGET_INCLUDE_AXFX := true
 
-# Charging
-BYPASS_CHARGE_SUPPORTED := true
-BYPASS_CHARGE_TOGGLE_PATH := /sys/class/power_supply/battery/input_suspend
-
 # Refresh Rate
 TARGET_SUPPORTED_REFRESH_RATES := 60,90,120
+
+TARGET_DISABLES_LIBPERF := true

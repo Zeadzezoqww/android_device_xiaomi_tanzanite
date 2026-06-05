@@ -1,5 +1,0 @@
-allow vendor_thm axion_proc_dirty:file rw_file_perms;
-allow vendor_thm axion_proc_printk:file rw_file_perms;
-allow vendor_thm axion_proc_sched:file rw_file_perms;
-allow vendor_thm proc_sched_migration_cost_ns:file rw_file_perms;
-allow vendor_thm proc_dirty:file rw_file_perms;

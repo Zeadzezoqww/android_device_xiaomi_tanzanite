@@ -220,7 +220,10 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 # Inherit the proprietary files
 include vendor/xiaomi/tanzanite/BoardConfigVendor.mk
 
-# AxionOS
-TARGET_DISABLE_EPPE := true
 
 
+BOARD_KERNEL_CMDLINE += androidboot.usbconfig=adb
+
+# Disable the Watchdog and AEE/Pureason reboot triggers
+BOARD_KERNEL_CMDLINE += androidboot.watchdog=0
+BOARD_KERNEL_CMDLINE += androidboot.aee_mode=disable

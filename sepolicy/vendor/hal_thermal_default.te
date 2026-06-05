@@ -1,0 +1,20 @@
+# Allow the Pixel thermal service to modify dirty pages and kernel scheduler parameters
+allow hal_thermal_default axion_proc_dirty:file rw_file_perms;
+allow hal_thermal_default axion_proc_printk:file rw_file_perms;
+allow hal_thermal_default axion_proc_sched:file rw_file_perms;
+allow hal_thermal_default proc_sched_migration_cost_ns:file rw_file_perms;
+allow hal_thermal_default proc_dirty:file rw_file_perms;
+
+# Allow the Pixel thermal service to read and write to sysfs thermal zones
+allow hal_thermal_default sysfs_thermal:dir r_dir_perms;
+allow hal_thermal_default sysfs_thermal:file rw_file_perms;
+allow hal_thermal_default sysfs_thermal:lnk_file r_file_perms;
+
+# Allow access to battery and charging control nodes
+allow hal_thermal_default sysfs_batteryinfo:dir r_dir_perms;
+allow hal_thermal_default sysfs_batteryinfo:file rw_file_perms;
+allow hal_thermal_default sysfs_batteryinfo:lnk_file r_file_perms;
+
+# Connect the service to the hardware binder
+binder_call(hal_thermal_default, hwservicemanager)
+binder_call(hal_thermal_default, servicemanager)
